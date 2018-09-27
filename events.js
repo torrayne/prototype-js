@@ -9,6 +9,6 @@ NodeList.prototype.on = function (trigger, handler, capture = false) {
 
 NodeList.prototype.off = function (trigger, handler, capture = false) {
   for (element in this) {
-    element.removeEventListener(trigger, handler, capture)
+    element.off(trigger, handler, capture)
   }
 }
