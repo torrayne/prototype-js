@@ -21,10 +21,10 @@ select('h1').css({
 
 ## Minify all modules
 ```shellscript
-sh min.sh
+$ sh min.sh
 ```
 
 ## Merge all files into one prototype.js
 ```shellscript
-sh make.sh ./prototype.js
+$ sh make.sh ./prototype.js
 ```
