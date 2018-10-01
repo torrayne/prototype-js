@@ -1,8 +1,7 @@
-find . -name '*.js' -not -path './min/*' -print0 | while IFS= read -r -d $'\0' path; do
-    bname=${path##*/}
-    name=${bname%.js}
-    $(minify $path -o ./min/$name.min.js)
-done
+#!/bin/bash
+filename=$1
+if [ $# -eq 0 ]
+then filename='prototype.js'
+fi
 
-cat ./modules/*.js | minify -o ./min/prototype.min.js
-cat ./modules/*.js > prototype.js
+awk 'FNR==1{print ""}{print}' ./modules/*.js > $filename
