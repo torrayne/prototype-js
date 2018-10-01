@@ -24,7 +24,7 @@ select('h1').css({
 $ sh min.sh
 ```
 
-## Merge all files into one prototype.js
+## Merge all modules into one prototype.js
 ```shellscript
-$ sh make.sh ./prototype.js
+$ sh make.sh [filepath]
 ```
