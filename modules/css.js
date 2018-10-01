@@ -5,7 +5,7 @@ Node.prototype.css = function (css) {
 }
 
 NodeList.prototype.css = function (css) {
-  for (element in this) {
+  for (element of this) {
     element.css(css)
   }
 }

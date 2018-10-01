@@ -5,3 +5,4 @@ find . -name '*.js' -not -path './min/*' -print0 | while IFS= read -r -d $'\0' p
 done
 
 cat ./modules/*.js | minify -o ./min/prototype.min.js
+cat ./modules/*.js > prototype.js
