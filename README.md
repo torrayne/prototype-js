@@ -7,8 +7,8 @@ document.querySelectorAll('h1').forEach((el) => {
         color: 'red'
     }
 
-    for (style in css) {
-        el.style[style] = css[style]
+    for (property in css) {
+        el.style[property] = css[property]
     }
 })
 ```
