@@ -1,10 +1,6 @@
 function createElement(tagName, atts) {
   let element = document.createElement(tagName)
-
-  for (attribute in atts) {
-    element.setAttribute(attribute, atts[attribute])
-  }
-
+  Object.assign(element, atts)
   return element
 }
 
