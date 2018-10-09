@@ -1,7 +1,5 @@
 function createElement(tagName, atts) {
-  let element = document.createElement(tagName)
-  Object.assign(element, atts)
-  return element
+  return Object.assign(document.createElement(tagName), atts)
 }
 
 Node.prototype.appendBefore = function (element) {
