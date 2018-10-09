@@ -1,11 +1,7 @@
 Node.prototype.css = function (css) {
-  for (property in css) {
-    this.style[property] = css[property]
-  }
+  Object.assign(this.style, css)
 }
 
 NodeList.prototype.css = function (css) {
-  for (element of this) {
-    element.css(css)
-  }
+  Array.prototype.map.call(this, node => node.css(css))
 }
