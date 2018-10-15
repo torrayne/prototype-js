@@ -44,29 +44,21 @@ An object containing valid JavaScript style keys and values
 `Node`
 ### Example
 ```javascript
-// Before
-Object.assign(parent.style, {
+const styles = {
     color: 'red',
     fontSize: '14px'
-})
+}
+// Before
+Object.assign(parent.style, styles)
 
 children.forEach(el => {
-    Object.assign(el.style, {
-        color: 'red',
-        fontSize: '14px'
-    })
+    Object.assign(el.style, styles)
 })
 
 // After
-parent.css({
-    color: 'red',
-    fontSize: '14px'
-})
+parent.css(styles)
 
-chilren.css({
-    color: 'red',
-    fontSize: '14px'
-})
+chilren.css(styles)
 ```
 
 ## [events.js](modules/events.js)
@@ -91,27 +83,23 @@ children.on('click', eventHandler)
 
 
 ## Example
-Before
 ```javascript
+const styles = {
+    el.style.color = 'red'
+    el.style.fontSize = '14px'
+}
+
+// Before
 const container = document.querySelector('#container')
 const parts = container.querySelectorAll('.part')
 parts.forEach(el => {
-    el.addEventListener('click', e => {
-        el.style.color = 'red'
-        el.style.fontSize = '14px'
-    })
+    el.addEventListener('click', e => Object.assign(el.style, styles))
 })
-```
-After
-```javascript
+
+// After
 const container = select('.container')
 const parts = container.select('.part')
-parts.on('click', e => {
-    e.target.css({
-        color: 'red',
-        fontSize: '14px'
-    })
-})
+parts.on('click', e => e.target.css(styles))
 ```
 ## License
 
