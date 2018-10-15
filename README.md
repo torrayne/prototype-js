@@ -23,12 +23,12 @@ A boolean that allows returning a Node instead of a Nodelist with one element. U
 ### Example
 ```javascript
 // Before
-const element = document.querySelector('query') // Node
-const children = element.querySelectorAll('query') // Nodelist
+const parent = document.querySelector('query') // Node
+const children = parent.querySelectorAll('query') // Nodelist
 
 // After 
-const element = select('query') // Node
-const children = element.select('query') // Nodelist
+const parent = select('query') // Node
+const children = parent.select('query') // Nodelist
 ```
 
 
@@ -45,7 +45,7 @@ An object containing valid JavaScript style keys and values
 ### Example
 ```javascript
 // Before
-Object.assign(element.style, {
+Object.assign(parent.style, {
     color: 'red',
     fontSize: '14px'
 })
@@ -58,7 +58,7 @@ children.forEach(el => {
 })
 
 // After
-element.css({
+parent.css({
     color: 'red',
     fontSize: '14px'
 })
@@ -76,14 +76,14 @@ The events module just wraps the built-in [`addEventListener`](https://developer
 ### Example
 ```javascript
 // Before
-element.addEventListener('click', eventHandler)
+parent.addEventListener('click', eventHandler)
 
 children.foreach(el => {
     el.addEventListener('click', eventHandler)
 })
 
 // After
-element.on('click', eventHandler)
+parent.on('click', eventHandler)
 children.on('click', eventHandler)
 ```
 
