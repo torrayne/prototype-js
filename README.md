@@ -23,6 +23,14 @@ children.forEach(el => {
 const parent = select('#parent')
 const chilren = parent.select('.child')
 chilren.on('click', e => e.target.css(styles))
+
+// And because all of the modules return their Node or Nodelist you can chain your methods:
+const headerList =
+    select('h1')
+    .css({color: 'blue'})
+    .on('click', e => console.log('click'))
+
+// headerList = NodeList
 ```
 # Modules
 
