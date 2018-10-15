@@ -20,8 +20,18 @@ A vaild CSS selector string
 A boolean that allows returning a Node instead of a Nodelist with one element. Use `simplify = false` if used in a loop.
 ### Returns
 `Node` or `Nodelist`
+### Example
+```javascript
+// Before
+const element = document.querySelector('query') // Node
+const children = element.querySelectorAll('query') // Nodelist
 
----
+// After 
+const element = select('query') // Node
+const children = element.select('query') // Nodelist
+```
+
+
 ## [css.js](modules/css.js)
 ### Syntax
 ```javascript
@@ -32,14 +42,53 @@ Node.prototype.css = function (css)
 An object containing valid JavaScript style keys and values
 ### Returns
 `Node`
+### Example
+```javascript
+// Before
+Object.assign(element.style, {
+    color: 'red',
+    fontSize: '14px'
+})
 
----
+children.forEach(el => {
+    Object.assign(el.style, {
+        color: 'red',
+        fontSize: '14px'
+    })
+})
+
+// After
+element.css({
+    color: 'red',
+    fontSize: '14px'
+})
+
+chilren.css({
+    color: 'red',
+    fontSize: '14px'
+})
+```
+
 ## [events.js](modules/events.js)
 The events module just wraps the built-in [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) and [`removeEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener).
 ### Returns
 `Node`
+### Example
+```javascript
+// Before
+element.addEventListener('click', eventHandler)
 
----
+children.foreach(el => {
+    el.addEventListener('click', eventHandler)
+})
+
+// After
+element.on('click', eventHandler)
+children.on('click', eventHandler)
+```
+
+
+
 
 ## Example
 Before
