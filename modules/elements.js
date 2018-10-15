@@ -1,6 +1,6 @@
-function createElement(tagName, atts, ...rest) {
-  return Object.assign(document.createElement(tagName), atts, ...rest)
-}
+const createElement = (tagName, atts, ...rest) => Object.assign(
+  document.createElement(tagName, ...rest), atts
+)
 
 Node.prototype.appendBefore = function (element) {
   element.parentNode.insertBefore(this, element);
