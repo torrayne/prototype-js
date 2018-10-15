@@ -14,14 +14,14 @@ const styles = {
 
 // Before
 const parent = document.querySelector('#parent')
-const chilren = container.querySelectorAll('.child')
+const chilren = parent.querySelectorAll('.child')
 children.forEach(el => {
     el.addEventListener('click', e => Object.assign(el.style, styles))
 })
 
 // After
 const parent = select('#parent')
-const chilren = container.select('.child')
+const chilren = parent.select('.child')
 chilren.on('click', e => e.target.css(styles))
 ```
 # Modules
