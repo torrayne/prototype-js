@@ -1,5 +1,12 @@
-Node.prototype.on = addEventListener
-Node.prototype.off = removeEventListener
+Node.prototype.on = function (...atts) {
+  this.addEventListener(...atts)
+  return this
+}
+
+Node.prototype.off = function (...atts) {
+  this.removeEventListener(...atts)
+  return this
+}
 
 NodeList.prototype.on = function (...atts) {
   this.forEach(node => node.on(...atts))
