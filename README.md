@@ -24,7 +24,7 @@ const parent = select('#parent')
 const chilren = parent.select('.child')
 chilren.on('click', e => e.target.css(styles))
 
-// And because all of the modules return their Node or Nodelist you can chain your methods:
+// And because all of the modules return their Node or NodeList you can chain your methods:
 const headerList =
     select('h1')
     .css({color: 'blue'})
@@ -43,18 +43,18 @@ Node.prototype.select = function (query[, simplify = true])
 #### `query`
 A vaild CSS selector string
 #### `simplify` [optional]
-A boolean that allows returning a Node instead of a Nodelist with one element. Use `simplify = false` if used in a loop.
+A boolean that allows returning a Node instead of a NodeList with one element. Use `simplify = false` if used in a loop.
 ### Returns
-`Node` or `Nodelist`
+`Node` or `NodeList`
 ### Example
 ```javascript
 // Before
 const parent = document.querySelector('#parent') // Node
-const children = parent.querySelectorAll('.child') // Nodelist
+const children = parent.querySelectorAll('.child') // NodeList
 
 // After 
 const parent = select('#parent') // Node
-const children = parent.select('.child') // Nodelist
+const children = parent.select('.child') // NodeList
 ```
 
 
@@ -67,7 +67,7 @@ Node.prototype.css = function (css)
 #### `css`
 An object containing valid JavaScript style keys and values
 ### Returns
-`Node`
+`Node` or `NodeList`
 ### Example
 ```javascript
 const styles = {
@@ -90,7 +90,7 @@ chilren.css(styles)
 ## [events.js](modules/events.js)
 The events module just wraps the built-in [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) and [`removeEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener).
 ### Returns
-`Node`
+`Node` or `NodeList`
 ### Example
 ```javascript
 // Before
