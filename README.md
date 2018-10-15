@@ -13,16 +13,16 @@ const styles = {
 }
 
 // Before
-const container = document.querySelector('#container')
-const parts = container.querySelectorAll('.part')
-parts.forEach(el => {
+const parent = document.querySelector('#parent')
+const chilren = container.querySelectorAll('.child')
+children.forEach(el => {
     el.addEventListener('click', e => Object.assign(el.style, styles))
 })
 
 // After
-const container = select('#container')
-const parts = container.select('.part')
-parts.on('click', e => e.target.css(styles))
+const parent = select('#parent')
+const chilren = container.select('.child')
+chilren.on('click', e => e.target.css(styles))
 ```
 # Modules
 
@@ -41,12 +41,12 @@ A boolean that allows returning a Node instead of a Nodelist with one element. U
 ### Example
 ```javascript
 // Before
-const parent = document.querySelector('query') // Node
-const children = parent.querySelectorAll('query') // Nodelist
+const parent = document.querySelector('#parent') // Node
+const children = parent.querySelectorAll('.child') // Nodelist
 
 // After 
-const parent = select('query') // Node
-const children = parent.select('query') // Nodelist
+const parent = select('#parent') // Node
+const children = parent.select('.child') // Nodelist
 ```
 
 
