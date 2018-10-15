@@ -5,7 +5,25 @@ Prototyping pure JavaScript with parts of jQuery I actually use and like.
 ## Getting Started
 
 Pick and choose from any of the modules, the minified folder contains [prototype.min.js](min/prototype.min.js) that has all of the modules merged into one file.
+## Example
+```javascript
+const styles = {
+    el.style.color = 'red'
+    el.style.fontSize = '14px'
+}
 
+// Before
+const container = document.querySelector('#container')
+const parts = container.querySelectorAll('.part')
+parts.forEach(el => {
+    el.addEventListener('click', e => Object.assign(el.style, styles))
+})
+
+// After
+const container = select('#container')
+const parts = container.select('.part')
+parts.on('click', e => e.target.css(styles))
+```
 # Modules
 
 ## [select.js](modules/select.js)
@@ -77,29 +95,6 @@ children.foreach(el => {
 // After
 parent.on('click', eventHandler)
 children.on('click', eventHandler)
-```
-
-
-
-
-## Example
-```javascript
-const styles = {
-    el.style.color = 'red'
-    el.style.fontSize = '14px'
-}
-
-// Before
-const container = document.querySelector('#container')
-const parts = container.querySelectorAll('.part')
-parts.forEach(el => {
-    el.addEventListener('click', e => Object.assign(el.style, styles))
-})
-
-// After
-const container = select('.container')
-const parts = container.select('.part')
-parts.on('click', e => e.target.css(styles))
 ```
 ## License
 
