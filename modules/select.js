@@ -1,5 +1,5 @@
 function select(query, simplify = true) {
-  let elements = document.querySelectorAll(query)
+  const elements = document.querySelectorAll(query)
   if (elements.length == 1 && simplify) return elements[0]
   return elements
 }
