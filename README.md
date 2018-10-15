@@ -8,7 +8,7 @@ Pick and choose from any of the modules, the minified folder contains [prototype
 
 # Modules
 
-## select.js
+## [select.js](modules/select.js)
 ### Syntax
 ```javascript
 Node.prototype.select = function (query[, simplify = true])
@@ -22,7 +22,7 @@ A boolean that allows returning a Node instead of a Nodelist with one element. U
 `Node` or `Nodelist`
 
 ---
-## css.js
+## [css.js](modules/css.js)
 ### Syntax
 ```javascript
 Node.prototype.css = function (css)
@@ -34,7 +34,7 @@ An object containing valid JavaScript style keys and values
 `Node`
 
 ---
-## events.js
+## [events.js](modules/events.js)
 The events module just wraps the built-in [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) and [`removeEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener).
 ### Returns
 `Node`
