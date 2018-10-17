@@ -17,3 +17,5 @@ NodeList.prototype.off = function (...atts) {
   this.forEach(node => node.off(...atts))
   return this
 }
+
+const window.on = Node.prototype.on
