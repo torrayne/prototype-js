@@ -19,3 +19,4 @@ NodeList.prototype.off = function (...atts) {
 }
 
 window.on = Node.prototype.on
+window.off = Node.prototype.off
