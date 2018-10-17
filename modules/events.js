@@ -18,4 +18,4 @@ NodeList.prototype.off = function (...atts) {
   return this
 }
 
-const window.on = Node.prototype.on
+window.on = Node.prototype.on
