@@ -4,4 +4,4 @@ Node.prototype.select = function (query, simplify = true) {
   return elements
 }
 
-const select = (...atts) => document.select(...atts)
+const select = Node.prototype.select.bind(document)
