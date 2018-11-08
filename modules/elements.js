@@ -3,7 +3,7 @@ const createElement = (tagName, atts, ...rest) => Object.assign(
 )
 
 Node.prototype.appendBefore = function (element) {
-  element.parentNode.insertBefore(this, element);
+  element.parentNode.insertBefore(this, element)
 }
 
 Node.prototype.appendAfter = function (element) {
