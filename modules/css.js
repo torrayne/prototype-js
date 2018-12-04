@@ -1,9 +1,14 @@
 Node.prototype.css = function (css) {
-  Object.assign(this.style, css)
+	if (!css || typeof (css) != 'object' || Array.isArray(css)) {
+		console.warn('CSS parameter is not a valid Object. Styles have not been applied')
+		return this
+	}
+
+	Object.assign(this.style, css)
 	return this
 }
 
 NodeList.prototype.css = function (css) {
-	for(let node of this) node.css(css)
+	for (let node of this) node.css(css)
 	return this
 }
