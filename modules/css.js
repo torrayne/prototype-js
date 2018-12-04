@@ -9,6 +9,6 @@ Node.prototype.css = function (css) {
 }
 
 NodeList.prototype.css = function (css) {
-	for (let node of this) node.css(css)
+	this.forEach(node => node.css(css))
 	return this
 }

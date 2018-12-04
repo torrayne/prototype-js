@@ -9,11 +9,11 @@ Node.prototype.off = function (...atts) {
 }
 
 NodeList.prototype.on = function (...atts) {
-	for (let node of this) node.on(...atts)
+	this.forEach(node => node.on(...atts))
 	return this
 }
 
 NodeList.prototype.off = function (...atts) {
-	for (let node of this) node.off(...atts)
+	this.forEach(node => node.on(...atts))
 	return this
 }
