@@ -1,6 +1,14 @@
-Node.prototype.select = function (query, simplify = true) {
-  const elements = this.querySelectorAll(query)
-  if (elements.length == 1 && simplify) return elements[0]
+Node.prototype.select = function (query, limit = true) {
+  let elements = this.querySelectorAll(query)
+
+  if (limit === true) {
+    if (elements.length == 0) return null
+    if (elements.length == 1) return elements[0]
+    return elements
+  }
+
+  if (typeof (limit) == 'number') return Array.from(elements).slice(0, limit)
+
   return elements
 }
 
