@@ -16,3 +16,4 @@ Node.prototype.select = function (query, limit = true) {
 }
 
 const select = Node.prototype.select.bind(document)
+// te4st
