@@ -37,13 +37,13 @@ const headerList =
 ## [select.js](modules/select.js)
 ### Syntax
 ```javascript
-Node.prototype.select = function (query[, simplify = true])
+Node.prototype.select = function (query[, limit = true])
 ```
 ### Parameters
 #### `query`
 A vaild CSS selector string
-#### `simplify` [optional]
-A boolean that allows returning a Node instead of a NodeList with one element. Use `simplify = false` if used in a loop.
+#### `limit` [optional]
+If `truthy` and there is only one element a `Node` will be returned. If `falsey` and there is only one element a `NodeList` will be returned.
 ### Returns
 `Node` or `NodeList`
 ### Example
