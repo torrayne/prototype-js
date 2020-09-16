@@ -1,5 +1,7 @@
 # Prototype JS
 
+_**Disclaimer:** This was a POC and shouldn't be used in Production. I recommend building your web apps with something like Svelte, Vue, or React._
+
 Prototyping pure JavaScript with parts of jQuery I actually use and like.
 
 ## Getting Started
